@@ -1,10 +1,11 @@
+import { memo } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "../../hooks/useForm";
 import { useQuery } from "../../hooks/useQuery";
 import { HeroCard } from "../components";
 import { getHeroesByName } from "../helpers";
 
-export const SearchPage = () => {
+export const SearchPage = ()=> {
   const { q } = useQuery();
 
   const { searchText, onInputChange } = useForm({
@@ -12,13 +13,13 @@ export const SearchPage = () => {
   });
 
   const navigate = useNavigate();
-  const heroes = getHeroesByName(q);
-
+  const heroes = getHeroesByName(q); 
   const showSearch = q.length === 0;
   const showError = q.length > 0 && heroes.length === 0;
-
+  const {search} = useLocation();
   const handleSearchSubmit = (e) => {
     e.preventDefault();
+    if(search.slice(3) === searchText) return
     navigate(`?q=${searchText.toLowerCase().trim()}`);
   };
   return (

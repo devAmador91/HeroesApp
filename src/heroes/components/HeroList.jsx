@@ -9,9 +9,9 @@ export const HeroList = ({ publisher }) => {
     <div
       style={{
         display: "grid",
-        "grid-template-columns": "repeat(3, 1fr)",
-        "grid-gap": "20px",
-        "grid-auto-rows": "minmax(200px, auto)",
+        "gridTemplateColumns": "repeat(3, 1fr)",
+        "gridGap": "20px",
+        "gridAutoRows": "minmax(200px, auto)",
       }}
     >
       {heroes.map((hero) => (

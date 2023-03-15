@@ -28,15 +28,15 @@ export const childHeroesRoutes = [
     element: <DCPages />,
   },
   {
-    path: "/login",
-    element: <LoginPage />,
-  },
-  {
     path: "/search",
     element: <SearchPage />,
   },
   {
     path: "/hero/:heroId",
     element: <HeroPage />,
+  },
+  {
+    path: "/*",
+    element: <MarvelPage />,
   },
 ];
