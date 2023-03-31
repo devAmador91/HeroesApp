@@ -1,5 +1,4 @@
-import { Navigate, Outlet } from "react-router-dom";
-import { LoginPage } from "../../auth";
+import { Outlet } from "react-router-dom";
 import { MarvelPage, DCPages, SearchPage, HeroPage } from "..";
 import { Navbar } from "../../Ui/";
 
